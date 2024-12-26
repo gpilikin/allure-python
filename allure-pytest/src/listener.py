@@ -211,7 +211,7 @@ class AllureListener:
 
             exception = call.excinfo.value
             if (status != Status.SKIPPED and _exception_brokes_test(exception)):
-                status = Status.BROKEN
+                status = Status.FAILED
 
         if status == Status.PASSED and hasattr(report, 'wasxfail'):
             reason = report.wasxfail
